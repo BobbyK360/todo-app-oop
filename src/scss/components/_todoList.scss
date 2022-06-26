@@ -1,0 +1,154 @@
+//Abstracts import
+@use '../abstracts/index'as a;
+
+@use '../components/resets';
+
+@mixin underline() {
+    border-bottom: 1px solid rgba(182, 182, 182, 0.5);
+}
+
+body {
+    background-color: a.$background;
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .todo-fixed-container {
+        font-family: a.$mainFont;
+        font-size: a.$fontSizeMain;
+        position: relative;
+        min-width: 300px;
+        max-width: 800px;
+        max-height: 80vh;
+
+
+        .todo-header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            height: 60px;
+            width: 100%;
+            z-index: 100;
+            background-color: a.$primary;
+            border-radius: 10px 10px 0 0;
+
+            @include underline();
+
+            .todo-title {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                .todo-number {
+                    width: 20px;
+                    height: 20px;
+                    background-color: a.$btn;
+                    margin: 0 10px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    color: a.$background;
+                    border-radius: 5px;
+                    font-size: a.$fontSizeSub;
+                }
+            }
+
+            .add-btn {
+                height: 30px;
+                width: 30px;
+                background-color: transparent;
+                border: none;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                i {
+                    transform: scale(2);
+                    color: a.$btn;
+                }
+
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .todo-container {
+            position: relative;
+            background-color: a.$primary;
+            max-height: 80vh;
+            box-shadow: 5px 5px 20px 5px #e7e6e6;
+            overflow-y: scroll;
+            border-radius: 10px;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+
+            .todo-items {
+                margin-top: 60px;
+            }
+
+            .todo-items,
+            .todo-completed-items {
+                position: relative;
+                padding: 20px;
+            }
+
+            .todo-item,
+            .todo-completed-item {
+                position: relative;
+                display: grid;
+                grid-template-columns: 1fr fit-content(20%);
+                grid-auto-rows: minmax(35px, auto);
+                align-items: center;
+                padding: 5px 5px;
+                color: a.$primaryText;
+                border-radius: 5px;
+                @include underline();
+
+                &:hover {
+                    background-color: a.$btn50;
+                }
+
+                .fa-ellipsis {
+                    width: 30px;
+                    color: a.$descText;
+                    display: flex;
+                    justify-content: center;
+                    font-size: a.$fontSizeElipsis;
+
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+
+                .list-item-description {
+                    grid-column: 1/2;
+                    font-size: a.$fontSizeDesc;
+                    color: a.$descText;
+                }
+            }
+
+            .todo-completed-items {
+                &::before {
+                    content: "Completed";
+                    padding: 5px;
+                    font-size: a.$fontSizeSub;
+                    // position: absolute;
+                }
+            }
+
+            .todo-completed-item {
+                filter: grayscale(1);
+                opacity: 0.4;
+            }
+        }
+    }
+}
