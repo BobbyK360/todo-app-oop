@@ -8,13 +8,13 @@
 }
 
 @mixin boxShadowInset() {
-    box-shadow: inset 0 0 0 0 #647DEE;
+    box-shadow: inset 0 0 0 0 a.$blueCompliment;
     transition: all .1s ease-in-out;
 }
 
 @mixin boxShadowInsetHover() {
     cursor: pointer;
-    box-shadow: inset 85px 0 0 0 #647DEE;
+    box-shadow: inset 85px 0 0 0 a.$blueCompliment;
 }
 
 body {
@@ -68,7 +68,6 @@ body {
             }
 
             .todo-header-btn {
-                // width: 100%;
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
@@ -99,7 +98,6 @@ body {
                 align-items: center;
 
                 i {
-                    // transform: scale(2);
                     font-size: a.$fontSizeAdd;
                     color: a.$btn;
                 }
@@ -111,7 +109,7 @@ body {
         }
 
         .todo-container {
-            position: relative;
+            // position: relative;
             background-color: a.$primary;
             max-height: 80vh;
             box-shadow: 5px 5px 20px 5px #e7e6e6;
@@ -158,7 +156,6 @@ body {
 
                     &:hover {
                         cursor: pointer;
-                        // text-shadow: 1px 1px 5px #000;
                         color: #B9ABCF;
                     }
                 }
@@ -175,13 +172,80 @@ body {
                     content: "Completed";
                     padding: 5px;
                     font-size: a.$fontSizeSub;
-                    // position: absolute;
                 }
             }
 
             .todo-completed-item {
                 filter: grayscale(1);
                 opacity: 0.4;
+            }
+        }
+
+        .todo-modal {
+            background-color: a.$primary;
+            background-color: yellow;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            display: grid;
+            width: 100%;
+            max-height: 200px;
+            // height: minmax(300px auto);
+            padding: 10px 20px;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            // grid-auto-rows: minmax(10px, auto);
+            grid-template-rows: 1fr 2fr 1fr;
+            align-items: center;
+            border-radius: 5px;
+            color: a.$descText;
+
+            #todo-input-title,
+            #todo-input-description {
+                grid-column: 1/5;
+                margin: 5px 0;
+                border: transparent;
+                color: inherit;
+            }
+
+            #todo-input-title {
+                grid-row: 1/2
+            }
+
+            #todo-input-description {
+                font-size: a.$fontSizeDesc;
+                overflow: scroll;
+
+                grid-row: 2/4;
+
+                &::-webkit-scrollbar {
+                    display: none;
+                }
+            }
+
+            #todo-modal-cancel,
+            #todo-modal-submit {
+                grid-row: 4/5;
+                height: 100%;
+                // width: 100%;
+                margin: 0 5px;
+                padding: 5px 0;
+                font-size: a.$fontSizeSub;
+                border: transparent;
+                border-radius: 5px;
+
+                &:hover {
+                    cursor: pointer;
+                    background-color: a.$blueCompliment;
+
+                }
+            }
+
+            #todo-modal-cancel {
+                grid-column: 3/4;
+            }
+
+            #todo-modal-submit {
+                grid-column: 4/5;
             }
         }
     }

@@ -85,7 +85,6 @@
                             eligendi.
                         </div>
                     </li>
-
                     <li class="todo-completed-item">
                         Holiday review<i class="fa-solid fa-ellipsis"></i>
                         <div class="list-item-description">
@@ -115,6 +114,7 @@
                         </div>
                     </li>
                 </ul>
+
                 <!-- <ul class="todo-completed-items">
                 <li class="todo-completed-item">
                     Holiday review<i class="fa-solid fa-ellipsis"></i>
@@ -129,6 +129,16 @@
                     Complete this damn project<i class="fa-solid fa-ellipsis"></i>
                 </li>
             </ul> -->
+
+                <div class="todo-modal">
+                    <label for="todo-input-title"></label>
+                    <input type="text" id="todo-input-title" name="todo-input-title" />
+                    <label for="todo-input-description"></label>
+                    <!-- <input type="text" id="todo-input-descriptiom" name="todo-input-description" /> -->
+                    <textarea name="todo-input-description" id="todo-input-description"></textarea>
+                    <button id="todo-modal-cancel">Cancel</button>
+                    <button id="todo-modal-submit">Add Task</button>
+                </div>
             </div>
         </div>
     </body>
