@@ -7,6 +7,16 @@
     border-bottom: 1px solid rgba(182, 182, 182, 0.5);
 }
 
+@mixin boxShadowInset() {
+    box-shadow: inset 0 0 0 0 #647DEE;
+    transition: all .1s ease-in-out;
+}
+
+@mixin boxShadowInsetHover() {
+    cursor: pointer;
+    box-shadow: inset 85px 0 0 0 #647DEE;
+}
+
 body {
     background-color: a.$background;
     position: relative;
@@ -23,7 +33,6 @@ body {
         max-width: 800px;
         max-height: 80vh;
 
-
         .todo-header {
             position: absolute;
             top: 0;
@@ -37,7 +46,6 @@ body {
             z-index: 100;
             background-color: a.$primary;
             border-radius: 10px 10px 0 0;
-
             @include underline();
 
             .todo-title {
@@ -59,9 +67,31 @@ body {
                 }
             }
 
+            .todo-header-btn {
+                // width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .clear-btn {
+                background-color: a.$btn;
+                padding: 0 10px;
+                border: none;
+                width: 85px;
+                color: a.$primary;
+                border-radius: 5px;
+                @include boxShadowInset();
+
+                &:hover {
+                    @include boxShadowInsetHover();
+                }
+            }
+
             .add-btn {
                 height: 30px;
                 width: 30px;
+                margin-left: 20px;
                 background-color: transparent;
                 border: none;
                 display: flex;
@@ -69,7 +99,8 @@ body {
                 align-items: center;
 
                 i {
-                    transform: scale(2);
+                    // transform: scale(2);
+                    font-size: a.$fontSizeAdd;
                     color: a.$btn;
                 }
 
@@ -114,7 +145,7 @@ body {
                 @include underline();
 
                 &:hover {
-                    background-color: a.$btn50;
+                    background-color: a.$btn20;
                 }
 
                 .fa-ellipsis {
