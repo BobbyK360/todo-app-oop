@@ -154,9 +154,12 @@ body {
                     display: flex;
                     justify-content: center;
                     font-size: a.$fontSizeElipsis;
+                    transition: all .1s ease-in-out;
 
                     &:hover {
                         cursor: pointer;
+                        // text-shadow: 1px 1px 5px #000;
+                        color: #B9ABCF;
                     }
                 }
 
