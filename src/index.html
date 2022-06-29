@@ -21,10 +21,6 @@
                 </span>
             </div>
             <div class="todo-container">
-                <!-- <div class="todo-header">
-                    <span class="todo-title">Todo <span class="todo-number">3</span></span>
-                    <button class="add-btn"><i class="fa-solid fa-square-plus"></i></button>
-                </div> -->
                 <ul class="todo-items">
                     <li class="todo-item">
                         Buy milk<i class="fa-solid fa-ellipsis"></i>
@@ -115,27 +111,20 @@
                     </li>
                 </ul>
 
-                <!-- <ul class="todo-completed-items">
-                <li class="todo-completed-item">
-                    Holiday review<i class="fa-solid fa-ellipsis"></i>
-                </li>
-                <li class="todo-completed-item">
-                    Find will to live<i class="fa-solid fa-ellipsis"></i>
-                </li>
-                <li class="todo-completed-item">
-                    Watch Netflix<i class="fa-solid fa-ellipsis"></i>
-                </li>
-                <li class="todo-completed-item">
-                    Complete this damn project<i class="fa-solid fa-ellipsis"></i>
-                </li>
-            </ul> -->
-
                 <div class="todo-modal">
                     <label for="todo-input-title"></label>
-                    <input type="text" id="todo-input-title" name="todo-input-title" />
+                    <input
+                        type="text"
+                        id="todo-input-title"
+                        name="todo-input-title"
+                        placeholder="Task name here"
+                    />
                     <label for="todo-input-description"></label>
-                    <!-- <input type="text" id="todo-input-descriptiom" name="todo-input-description" /> -->
-                    <textarea name="todo-input-description" id="todo-input-description"></textarea>
+                    <textarea
+                        name="todo-input-description"
+                        id="todo-input-description"
+                        placeholder="Description"
+                    ></textarea>
                     <button id="todo-modal-cancel">Cancel</button>
                     <button id="todo-modal-submit">Add Task</button>
                 </div>
