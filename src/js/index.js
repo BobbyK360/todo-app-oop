@@ -1,7 +1,5 @@
 import '../scss/index.scss';
-import testText from './partials/test';
-
-testText();
+import testText from './partials/todoApp';
 
 //Really basic code to refresh myself on how to make a modal appear. Will not be in final OOP version.
 
